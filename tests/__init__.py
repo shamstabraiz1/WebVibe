@@ -1,0 +1,1 @@
+"""Test package for Urdu sentiment analysis."""
