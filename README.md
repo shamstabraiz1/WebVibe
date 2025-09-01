@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Urdu Sentiment Analysis with Dialectal Variation Handling
 
 A comprehensive sentiment analysis system for Urdu text that handles dialectal variations, code-mixing, and script inconsistencies. Built with transformer models and designed for production use.
@@ -274,3 +275,7 @@ For questions and support:
 - Create an issue on GitHub
 - Check the documentation in `/docs`
 - Review the test cases for usage examples
+=======
+# NLP_project-
+NLP
+>>>>>>> c0c471cb465e8b811aacb51c6a942ae170d1d792
