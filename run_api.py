@@ -22,6 +22,11 @@ def main():
     print("🚀 Starting Urdu Sentiment Analysis API")
     print(f"📚 API Documentation: http://localhost:8000/docs")
     print(f"🔍 Health Check: http://localhost:8000/health")
+    print(f"🧠 Model Info: http://localhost:8000/model/info")
+    print(f"📊 API Stats: http://localhost:8000/stats")
+    print(f"📝 Predict Sentiment: POST http://localhost:8000/predict")
+    print(f"📝 Predict Batch Sentiment: POST http://localhost:8000/predict/batch")
+    print(f"🔄 Reload Model: POST http://localhost:8000/model/reload")
     
     # Run the server
     uvicorn.run(
