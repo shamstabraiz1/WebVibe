@@ -75,7 +75,8 @@ class UrduBertModel(nn.Module):
             # Load the base model
             self.bert = AutoModel.from_pretrained(
                 self.model_name,
-                config=config
+                config=config,
+                load_in_8bit=True
             )
             
             # Get hidden size from config
@@ -109,7 +110,7 @@ class UrduBertModel(nn.Module):
             )
             
             config = AutoConfig.from_pretrained(fallback_model)
-            self.bert = AutoModel.from_pretrained(fallback_model, config=config)
+            self.bert = AutoModel.from_pretrained(fallback_model, config=config, load_in_8bit=True)
             self.hidden_size = config.hidden_size
             self.model_name = fallback_model
             

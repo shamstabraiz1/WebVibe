@@ -21,7 +21,7 @@ class UrduSentimentModel(nn.Module):
     
     def __init__(
         self,
-        model_name: str = "bert-base-multilingual-cased",
+    model_name: str = "distilbert-base-multilingual-cased",
         num_classes: int = 3,
         max_length: int = 512,
         dropout_rate: float = 0.1,
@@ -61,6 +61,10 @@ class UrduSentimentModel(nn.Module):
             dropout_rate=dropout_rate,
             hidden_layers=hidden_layers
         )
+
+        # Ensure classification head matches model dtype if quantized
+        if hasattr(self.bert_model.bert, 'dtype') and self.bert_model.bert.dtype == torch.float16:
+            self.classification_head = self.classification_head.half()
         
         # Text preprocessor
         self.preprocessor = TextPreprocessor(

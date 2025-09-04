@@ -190,8 +190,8 @@ class ErrorResponse(BaseModel):
         default=None,
         description="Additional error details"
     )
-    timestamp: datetime = Field(
-        default_factory=datetime.now,
+    timestamp: str = Field(
+        default_factory=lambda: datetime.now().isoformat(),
         description="Error timestamp"
     )
 
@@ -213,8 +213,8 @@ class HealthResponse(BaseModel):
     """Health check response."""
     
     status: str = Field(..., description="Service status")
-    timestamp: datetime = Field(
-        default_factory=datetime.now,
+    timestamp: str = Field(
+        default_factory=lambda: datetime.now().isoformat(),
         description="Health check timestamp"
     )
     model_loaded: bool = Field(..., description="Whether model is loaded")

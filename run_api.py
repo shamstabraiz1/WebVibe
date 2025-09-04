@@ -20,9 +20,8 @@ def main():
     logging.basicConfig(level=getattr(logging, args.log_level.upper()))
     
     print("🚀 Starting Urdu Sentiment Analysis API")
-    print(f"📍 Server will be available at: http://{args.host}:{args.port}")
-    print(f"📚 API Documentation: http://{args.host}:{args.port}/docs")
-    print(f"🔍 Health Check: http://{args.host}:{args.port}/health")
+    print(f"📚 API Documentation: http://localhost:8000/docs")
+    print(f"🔍 Health Check: http://localhost:8000/health")
     
     # Run the server
     uvicorn.run(
